@@ -1,0 +1,7 @@
+{
+  "name": "Red Giant Arcade",
+  "description": "Commercial interactive touchscreen gaming platform for brand activations, digital kiosks, and live events.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
