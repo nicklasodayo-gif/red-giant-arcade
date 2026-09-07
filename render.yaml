@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: red-giant-arcade
+    env: node
+    branch: main
+    repo: https://github.com/nicklasodayo-gif/red-giant-arcade.git
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start:prod
+    autoDeploy: true
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production

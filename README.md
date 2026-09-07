@@ -28,6 +28,27 @@ To open the app directly in the Admin dashboard while running the dev server, us
 
 Available `tab` values: `dashboard`, `campaigns`, `themes`, `games`, `kiosks`, `leads`, `rewards`, `leaderboards`, `analytics`, `sync`, `settings`.
 
+## Deploy to Render
+
+You can deploy this app to Render from this GitHub repository. A `render.yaml` manifest is included to simplify setup.
+
+1. Go to https://render.com and sign in.
+2. Click "New" → "Web Service" → "Connect a repository" and select `nicklasodayo-gif/red-giant-arcade`.
+3. Use branch `main` and confirm the default settings.
+   - Build Command: `npm ci && npm run build`
+   - Start Command: `npm run start:prod`
+   - Environment: `Node`
+4. Add environment variables in Render's dashboard (Secrets):
+   - `GEMINI_API_KEY` — set your Gemini or other API keys here.
+   - Any other credentials required by the app.
+5. Set the health check path to `/healthz` (used by Render for service health).
+6. Create the service — Render will build and deploy automatically.
+
+Notes:
+- We included `render.yaml` to define the service. You can still customize settings in the Render dashboard.
+- Do not commit secrets. Use Render's environment variables UI to set sensitive values.
+
+
 ## Development commands
 
 - Install dependencies: `npm install`
